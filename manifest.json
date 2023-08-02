@@ -1,18 +1,22 @@
 {
   "manifest_version": 2,
-  "name": "template-extension",
+  "name": "dev-extension",
   "version": "1.0.0",
   "description": "",
   "icons": {},
   "permissions": [
-    "storage"
+    "storage",
+    "notifications"
   ],
-  "content_scripts": [{
-    "matches": ["*://*/*"],
-    "js": [
-      "node_modules/webextension-polyfill/dist/browser-polyfill.min.js",
-      "index.js"
-    ]
-  }],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": [
+        "node_modules/webextension-polyfill/dist/browser-polyfill.min.js",
+        "index.js",
+        "scripts/doordash.js"
+      ]
+    }
+  ],
   "background": {"scripts": ["node_modules/webextension-polyfill/dist/browser-polyfill.min.js"]}
 }

@@ -1,1 +1,1 @@
-console.debug('[extension] run template-extension/index.js')
+console.debug('[extension] run dev-extension')
