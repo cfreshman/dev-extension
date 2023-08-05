@@ -24,8 +24,12 @@ console.debug('[extension] run dev-extension doordash.js')
     }
     if (/doordash.com\/doubledash/.test(location.href)) {
         do {
-            await new Promise(x=>setTimeout(x, 100))
-            document.querySelector('[data-testid=dbd-panelCollapseButton]').click()
+            await new Promise(x=>setTimeout(x, 1_000))
+            const l = document.querySelecto('[data-testid=dbd-panelCollapseButton]')
+            if (l) {
+                l.click()
+                break
+            }
         } while (1)
     }
 })()
