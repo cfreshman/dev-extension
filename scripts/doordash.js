@@ -1,6 +1,6 @@
 console.debug('[extension] run dev-extension doordash.js')
+// get doordash notifications even when in fricking focus mode
 
-// watch for changes in a background tab
 ;(async () => {
     if (/doordash.com\/orders/.test(location.href)) {
         let in_progress = false
