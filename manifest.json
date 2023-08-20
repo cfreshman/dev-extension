@@ -6,7 +6,8 @@
   "icons": {},
   "permissions": [
     "storage",
-    "notifications"
+    "notifications",
+    "tabs"
   ],
   "content_scripts": [
     {
@@ -15,7 +16,8 @@
         "node_modules/webextension-polyfill/dist/browser-polyfill.min.js",
         "index.js",
         "scripts/doordash.js",
-        "scripts/youtube-hide-comments.js"
+        "scripts/youtube-hide-comments.js",
+        "scripts/twitter-hide-suggestions.js"
       ]
     }
   ],

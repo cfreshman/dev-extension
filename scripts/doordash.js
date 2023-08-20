@@ -2,7 +2,7 @@ console.debug('[extension] run dev-extension doordash.js')
 // get doordash notifications even when in fricking focus mode
 
 ;(async () => {
-    if (/doordash.com\/orders/.test(location.href)) {
+    if (/doordash.com\/(orders|doubledash)/.test(location.href)) {
         let in_progress = false
         do {
             await new Promise(x=>setTimeout(x, 3_000))
@@ -22,14 +22,16 @@ console.debug('[extension] run dev-extension doordash.js')
             }
         } while (1)
     }
+})()
+;(async () => {
     if (/doordash.com\/doubledash/.test(location.href)) {
         do {
             await new Promise(x=>setTimeout(x, 1_000))
-            const l = document.querySelecto('[data-testid=dbd-panelCollapseButton]')
+            const l = document.querySelector('[data-testid=dbd-panelCollapseButton]')
             if (l) {
                 l.click()
                 break
             }
         } while (1)
     }
-})()
+})
